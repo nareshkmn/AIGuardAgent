@@ -32,6 +32,9 @@ The agent operates on a state-based logic flow, integrating multiple AI modaliti
 * **LLM Interaction:** If an unrecognized person is detected, the system generates a context-specific prompt and sends it to the Groq LLM.
 
 ## File Structure:
+* AI_guard_mode.ipynb: The main Jupyter Notebook containing all the code for enrollment, modular tests, and the final integrated application.
+* requirements.txt: A list of all necessary Python libraries for easy installation.
+* trusted_faces/: A directory where you must place the training images for trusted individuals.
 
 
 ## Setup and Installation
@@ -39,6 +42,8 @@ Follow these steps to set up and run the project.
 
 ### 1. Prerequisites
 Python 3.8+
+
+Jupyter Notebook or JupyterLab installed.
 
 pip (Python package installer)
 
@@ -51,6 +56,15 @@ cd <your-repo-folder>
 
 ### 3. Set Up a Virtual Environment (Highly Recommended)
 This isolates the project's dependencies from your system's Python installation.
+
+### 4. Install Dependencies
+Install all the required libraries using the requirements.txt file.
+
+''' pip install -r requirements.txt
+# You also need to register your virtual environment with Jupyter
+python -m ipykernel install --user --name=ai-guard-env 
+'''
+
 
 
 
@@ -67,7 +81,7 @@ The system needs to learn who to trust.
 
 * Create a folder named trusted_faces in the main project directory.
 * Add 3-5 varied photos of each trusted person into this folder.
-* Important: Name the files using the format name_number.jpg (e.g., nareesh_1.jpg, nareesh_2.png, atul_1.jpg). The script uses the part of the filename before the underscore as the person's name.
+* Important: Name the files using the format name_number.jpg (e.g., name_1.jpg, name_2.png, name2_1.jpg). The script uses the part of the filename before the underscore as the person's name.
 * Run the enrollment script from your terminal:
 * python enroll_faces.py
 * This will train the SVM model and create a known_faces_model.pkl file. Re-run this script whenever you add or change photos

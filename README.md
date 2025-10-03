@@ -39,5 +39,14 @@ Follow these steps to set up and run the project.
 
 ### 1. Prerequisites
 Python 3.8+
+
 pip (Python package installer)
+
+### 2. Clone the Repository
+Clone this repository to your local machine:
+
+git clone <your-repo-url>
+
+cd <your-repo-folder>
+
 

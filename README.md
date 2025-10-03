@@ -31,4 +31,13 @@ The agent operates on a state-based logic flow, integrating multiple AI modaliti
 
 **LLM Interaction:** If an unrecognized person is detected, the system generates a context-specific prompt and sends it to the Groq LLM.
 
-## File Structure
+## File Structure:
+
+
+## Setup and Installation
+Follow these steps to set up and run the project.
+
+### 1. Prerequisites
+Python 3.8+
+pip (Python package installer)
+

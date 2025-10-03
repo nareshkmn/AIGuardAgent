@@ -58,8 +58,19 @@ This isolates the project's dependencies from your system's Python installation.
 ### Step 1: Configure the API Key
 Before running, you must add your secret Groq API key.
  
-* Open the main_guard_system_final.py file.
+* Open the AI_guard_mode.ipynb file.
 * Find the line GROQ_API_KEY = "YOUR_GROQ_API_KEY"
 * Replace "YOUR_GROQ_API_KEY" with the key you obtained from the Groq Console.
+
+### Step 2: Enroll Trusted Faces
+The system needs to learn who to trust.
+
+* Create a folder named trusted_faces in the main project directory.
+* Add 3-5 varied photos of each trusted person into this folder.
+* Important: Name the files using the format name_number.jpg (e.g., nareesh_1.jpg, nareesh_2.png, atul_1.jpg). The script uses the part of the filename before the underscore as the person's name.
+* Run the enrollment script from your terminal:
+* python enroll_faces.py
+* This will train the SVM model and create a known_faces_model.pkl file. Re-run this script whenever you add or change photos
+
 
 

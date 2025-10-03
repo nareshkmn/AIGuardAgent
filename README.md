@@ -7,7 +7,7 @@ This project is an advanced AI Guard Agent designed to monitor a college hostel 
 The system is built with a high-performance, multi-threaded architecture to ensure a responsive and seamless user experience.
 
 ### Key Features
-**Vocal Activation:** The agent is activated and deactivated using simple voice commands ("guard my room" / "stand down").
+* **Vocal Activation:** The agent is activated and deactivated using simple voice commands ("guard my room" / "stand down").
 
 **Robust Face Recognition:** Utilizes a Support Vector Machine (SVM) classifier trained on multiple images per person for high-accuracy recognition, even under varying conditions.
 
@@ -48,5 +48,18 @@ Clone this repository to your local machine:
 git clone <your-repo-url>
 
 cd <your-repo-folder>
+
+### 3. Set Up a Virtual Environment (Highly Recommended)
+This isolates the project's dependencies from your system's Python installation.
+
+
+
+## How to Run the Application
+### Step 1: Configure the API Key
+Before running, you must add your secret Groq API key.
+ 
+Open the main_guard_system_final.py file.
+Find the line GROQ_API_KEY = "YOUR_GROQ_API_KEY"
+Replace "YOUR_GROQ_API_KEY" with the key you obtained from the Groq Console.
 
 

@@ -9,27 +9,27 @@ The system is built with a high-performance, multi-threaded architecture to ensu
 ### Key Features
 * **Vocal Activation:** The agent is activated and deactivated using simple voice commands ("guard my room" / "stand down").
 
-**Robust Face Recognition:** Utilizes a Support Vector Machine (SVM) classifier trained on multiple images per person for high-accuracy recognition, even under varying conditions.
+* **Robust Face Recognition:** Utilizes a Support Vector Machine (SVM) classifier trained on multiple images per person for high-accuracy recognition, even under varying conditions.
 
-**Real-time Visual Feedback:** A pop-up camera window displays the live feed, drawing bounding boxes around detected faces and showing the predicted identity along with the model's confidence score.
+* **Real-time Visual Feedback:** A pop-up camera window displays the live feed, drawing bounding boxes around detected faces and showing the predicted identity along with the model's confidence score.
 
-**Context-Aware Intruder Dialogue:** When an unrecognized person is detected, the agent initiates an escalating conversation with prompts specifically designed for a hostel environment, powered by the Groq LLM with Llama 3.1.
+* **Context-Aware Intruder Dialogue:** When an unrecognized person is detected, the agent initiates an escalating conversation with prompts specifically designed for a hostel environment, powered by the Groq LLM with Llama 3.1.
 
-**High-Performance Design:** The application is multi-threaded, separating the continuous voice command listener from the main vision processing loop. This ensures the vision system starts instantly upon activation and remains highly responsive.
+* **High-Performance Design:** The application is multi-threaded, separating the continuous voice command listener from the main vision processing loop. This ensures the vision system starts instantly upon activation and remains highly responsive.
 
-**Polished User Experience:** Includes graceful shutdown procedures, clear status messages, and robust error handling for audio and hardware.
+* **Polished User Experience:** Includes graceful shutdown procedures, clear status messages, and robust error handling for audio and hardware.
 
 ## System Architecture
 
 The agent operates on a state-based logic flow, integrating multiple AI modalities:
 
-**Speech Recognition (ASR):** A background thread continuously listens for activation or deactivation commands.
+* **Speech Recognition (ASR):** A background thread continuously listens for activation or deactivation commands.
 
-**State Management:** Upon receiving a valid command, the system's state (guard_mode_active) is changed.
+* **State Management:** Upon receiving a valid command, the system's state (guard_mode_active) is changed.
 
-**Computer Vision:** When active, the main thread processes the webcam feed. It detects faces and uses the pre-trained SVM classifier to identify individuals.
+* **Computer Vision:** When active, the main thread processes the webcam feed. It detects faces and uses the pre-trained SVM classifier to identify individuals.
 
-**LLM Interaction:** If an unrecognized person is detected, the system generates a context-specific prompt and sends it to the Groq LLM.
+* **LLM Interaction:** If an unrecognized person is detected, the system generates a context-specific prompt and sends it to the Groq LLM.
 
 ## File Structure:
 
@@ -58,8 +58,8 @@ This isolates the project's dependencies from your system's Python installation.
 ### Step 1: Configure the API Key
 Before running, you must add your secret Groq API key.
  
-Open the main_guard_system_final.py file.
-Find the line GROQ_API_KEY = "YOUR_GROQ_API_KEY"
-Replace "YOUR_GROQ_API_KEY" with the key you obtained from the Groq Console.
+* Open the main_guard_system_final.py file.
+* Find the line GROQ_API_KEY = "YOUR_GROQ_API_KEY"
+* Replace "YOUR_GROQ_API_KEY" with the key you obtained from the Groq Console.
 
 

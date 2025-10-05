@@ -60,7 +60,8 @@ This isolates the project's dependencies from your system's Python installation.
 ### 4. Install Dependencies
 Install all the required libraries using the requirements.txt file.
 
-''' pip install -r requirements.txt
+ **pip install -r requirements.txt**
+ 
 # You also need to register your virtual environment with Jupyter
 python -m ipykernel install --user --name=ai-guard-env 
 '''

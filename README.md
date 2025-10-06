@@ -30,6 +30,7 @@ The agent operates on a state-based logic flow, integrating multiple AI modaliti
 * **Computer Vision:** When active, the main thread processes the webcam feed. It detects faces and uses the pre-trained SVM classifier to identify individuals.
 
 * **LLM Interaction:** If an unrecognized person is detected, the system generates a context-specific prompt and sends it to the Groq LLM.
+  
 
 ## File Structure:
 * AI_guard_mode.ipynb: The main Jupyter Notebook containing all the code for enrollment, modular tests, and the final integrated application.

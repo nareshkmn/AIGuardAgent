@@ -30,6 +30,8 @@ The agent operates on a state-based logic flow, integrating multiple AI modaliti
 * **Computer Vision:** When active, the main thread processes the webcam feed. It detects faces and uses the pre-trained SVM classifier to identify individuals.
 
 * **LLM Interaction:** If an unrecognized person is detected, the system generates a context-specific prompt and sends it to the Groq LLM.
+
+* ![System Architecture Diagram](system_architecture_flow_chart.png)
   
 
 ## File Structure:
@@ -42,16 +44,16 @@ The agent operates on a state-based logic flow, integrating multiple AI modaliti
 Follow these steps to set up and run the project.
 
 ### 1. Prerequisites
-Python 3.8+
+Python 3.8+ on Google Colab or personal computer with anaconda.
 
-Jupyter Notebook or JupyterLab installed.
+Jupyter Notebook on VS Code with anaconda.
 
 pip (Python package installer)
 
 ### 2. Clone the Repository
 Clone this repository to your local machine:
 
-git clone <your-repo-url>
+git clone <https://github.com/nareshkmn/AIGuardAgent.git>
 
 cd <your-repo-folder>
 

@@ -32,6 +32,19 @@ The agent operates on a state-based logic flow, integrating multiple AI modaliti
 * **LLM Interaction:** If an unrecognized person is detected, the system generates a context-specific prompt and sends it to the Groq LLM.
 
 * ![System Architecture Diagram](system_architecture_flow_chart.png)
+
+## Technologies Used
+* **Programming Language:** anaconda3(Python 3.13.5)
+
+* **Computer Vision:** OpenCV, face_recognition
+
+* **Machine Learning:** Scikit-learn (for the SVM classifier)
+
+* **Speech Recognition (ASR):** speech_recognition (using Google Web Speech API)
+
+* **Text-to-Speech (TTS):** gTTS, pygame
+
+* **Conversational Agent (LLM):** Groq API with Llama 3.1
   
 
 ## File Structure:
@@ -55,8 +68,6 @@ Clone this repository to your local machine:
 
 git clone <https://github.com/nareshkmn/AIGuardAgent.git>
 
-cd <your-repo-folder>
-
 ### 3. Set Up a Virtual Environment (Highly Recommended)
 This isolates the project's dependencies from your system's Python installation.
 
@@ -65,30 +76,28 @@ Install all the required libraries using the requirements.txt file.
 
  **pip install -r requirements.txt**
  
-# You also need to register your virtual environment with Jupyter
+### You also need to register your virtual environment with Jupyter
 python -m ipykernel install --user --name=ai-guard-env 
 '''
 
-
-
-
 ## How to Run the Application
-### Step 1: Configure the API Key
-Before running, you must add your secret Groq API key.
- 
-* Open the AI_guard_mode.ipynb file.
-* Find the line GROQ_API_KEY = "YOUR_GROQ_API_KEY"
-* Replace "YOUR_GROQ_API_KEY" with the key you obtained from the Groq Console.
 
 ### Step 2: Enroll Trusted Faces
 The system needs to learn who to trust.
-
-* Create a folder named trusted_faces in the main project directory.
-* Add 3-5 varied photos of each trusted person into this folder.
+* Create a folder named **trusted_faces** in the main project directory.
+* Add 3-5 varied high-quality images for each trusted person with different lighting conditions of each trusted person into this folder.
 * Important: Name the files using the format name_number.jpg (e.g., name_1.jpg, name_2.png, name2_1.jpg). The script uses the part of the filename before the underscore as the person's name.
-* Run the enrollment script from your terminal:
-* python enroll_faces.py
+* Run the Face Enrollment cell in the notebook. This will create a **known_faces_model.pkl** file.
 * This will train the SVM model and create a known_faces_model.pkl file. Re-run this script whenever you add or change photos
+
+### Step 1: Configure the API Key
+Before running, you must add your secret Groq API key. 
+* Open the **AI_guard_mode.ipynb** file.
+* Find the line **GROQ_API_KEY = "YOUR_GROQ_API_KEY"**
+* Replace "YOUR_GROQ_API_KEY" with the key you obtained from the Groq Console.
+
+
+
 
 
 

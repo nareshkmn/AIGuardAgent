@@ -48,10 +48,10 @@ The agent operates on a state-based logic flow, integrating multiple AI modaliti
   
 
 ## File Structure:
-* AI_guard_mode.ipynb: The main Jupyter Notebook containing all the code for enrollment, modular tests, and the final integrated application.
-* requirements.txt: A list of all necessary Python libraries for easy installation.
-* trusted_faces/: A directory where you must place the training images for trusted individuals.
-
+* **AI_guard_mode.ipynb:** The main Jupyter Notebook containing all the code for enrollment, modular tests, and the final integrated application.
+* **requirements.txt:** A list of all necessary Python libraries for easy installation.
+* **trusted_faces:** A directory where you must place the training images for trusted individuals.
+* **untrusted_faces:** A directory where you must place the training images for untrusted individuals, put some random images for training.
 
 ## Setup and Installation
 Follow these steps to set up and run the project.
@@ -81,16 +81,17 @@ python -m ipykernel install --user --name=ai-guard-env
 '''
 
 ## How to Run the Application
-
-### Step 2: Enroll Trusted Faces
-The system needs to learn who to trust.
-* Create a folder named **trusted_faces** in the main project directory.
+### Step 1: Enroll Trusted Faces
+The system needs to learn who to recognize or who to unrecognize:
+* Create a folder named **trusted_faces** in the main project directory for trusted individual.
+* Create a folder named **untrusted_faces** in the same main project directory for untrusted individual.
 * Add 3-5 varied high-quality images for each trusted person with different lighting conditions of each trusted person into this folder.
+* Also Add at least 5 images for untrusted person, can be random images from internet to train the model for untrusted individuals.
 * Important: Name the files using the format name_number.jpg (e.g., name_1.jpg, name_2.png, name2_1.jpg). The script uses the part of the filename before the underscore as the person's name.
 * Run the Face Enrollment cell in the notebook. This will create a **known_faces_model.pkl** file.
 * This will train the SVM model and create a known_faces_model.pkl file. Re-run this script whenever you add or change photos
 
-### Step 1: Configure the API Key
+### Step 2: Configure the API Key
 Before running, you must add your secret Groq API key. 
 * Open the **AI_guard_mode.ipynb** file.
 * Find the line **GROQ_API_KEY = "YOUR_GROQ_API_KEY"**
